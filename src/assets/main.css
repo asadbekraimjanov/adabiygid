@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Abhaya';
+    src: url('@/assets/fonts/Abhaya_Libre/AbhayaLibre-Regular.ttf');
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url("@/assets/fonts/Poppins/Poppins-Light.ttf");
+}
+
+body {
+    font-family: 'Times New Roman'
+}
