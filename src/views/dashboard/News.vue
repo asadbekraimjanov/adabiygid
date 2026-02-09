@@ -1,6 +1,6 @@
 <template>
     <div class="flex justify-between items-center py-6 border-b border-[#898686]">
-        <img src="@/assets/Yangiliklar.png" class="z-50" alt="">
+        <img id="news" src="@/assets/Yangiliklar.png" class="z-50" alt="">
         <el-button type="info" class="!bg-transparent !rounded-none !cursor-pointer z-50 !text-xl !py-7
                                 hover:scale-[1.05] !font-medium">Barchasini ko’rish</el-button>
     </div>

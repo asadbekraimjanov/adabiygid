@@ -4,7 +4,7 @@
             <img src="@/assets/AdabiyGid.png" class="z-50" alt="">
             <ul class="flex justify-between items-center gap-12 text-white text-lg font-[Poppins] z-50">
                 <li class="font-semibold cursor-pointer hover:text-[#898686]">Bosh sahifa</li>
-                <li class="cursor-pointer hover:text-[#898686]">Yangiliklar</li>
+                <li class="cursor-pointer hover:text-[#898686]" @click="window.scrollTo('#main')">Yangiliklar</li>
                 <li class="cursor-pointer hover:text-[#898686]">Adiblar</li>
                 <li class="cursor-pointer hover:text-[#898686]">VR tur</li>
                 <li class="cursor-pointer hover:text-[#898686]">Aloqa</li>
