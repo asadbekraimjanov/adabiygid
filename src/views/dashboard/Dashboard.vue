@@ -1,6 +1,6 @@
 <template>
     <div class="w-full bg-[#252525]">
-        <div class="w-full fixed flex justify-between items-center bg-[#252525] border-b border-[#898686] py-7 px-28" style="z-index: 1000 !important;">
+        <div class="w-full fixed flex justify-between items-center bg-[#252525] border-b border-[#898686] py-7 px-40" style="z-index: 1000 !important;">
             <img src="@/assets/AdabiyGid.png" class="z-50" alt="">
             <ul class="flex justify-between items-center gap-12 text-white text-lg font-[Poppins] z-50">
                 <li class="font-semibold cursor-pointer hover:text-[#898686]">Bosh sahifa</li>
@@ -21,11 +21,11 @@
 
             <Main />
         </div>
-        <div class="bg-[#3A3C3D] border-t-2 border-gray-800 px-28 pt-6 !font-[Poppins] shadow-2xl">
+        <div class="bg-[#3A3C3D] border-t-2 border-gray-800 px-40 pt-6 !font-[Poppins] shadow-2xl">
             <News />
         </div>
 
-        <div class="w-full bg-[#232424] px-28 font-[Poppins]">
+        <div class="w-full bg-[#232424] px-40 font-[Poppins]">
             <div class="pt-20 border-r border-[#727272]">
                 <div class="flex justify-between items-center">
                     <div class="w-1/2 border-r border-[#727272] pr-10 pb-10">
@@ -62,7 +62,7 @@
             </div>
         </div>
 
-        <div class="w-full bg-[#3A3C3D] pt-20 pb-10 px-28 font-[Poppins]">
+        <div class="w-full bg-[#3A3C3D] pt-20 pb-10 px-40 font-[Poppins]">
             <img src="@/assets/Muzey%20xaritasi.png" alt="">
             <img src="@/assets/Line%2020.png" class="mt-4" alt="">
 
@@ -99,7 +99,7 @@
             </div>
         </div>
         <div class="w-full pt-16 pb-10 font-[Poppins]">
-            <div class="w-full px-28 border-b border-[#727272] pb-10">
+            <div class="w-full px-40 border-b border-[#727272] pb-10">
                 <img src="@/assets/Biz%20bilan%20aloqa.png" alt="">
                 <img src="@/assets/Line%2020.png" class="mt-4" alt="">
                 <div class="flex justify-between items-center gap-10 py-10">
@@ -108,7 +108,7 @@
                         <p>8 71 2386599</p>
                         <p>info@tuit.com</p>
                     </div>
-                    <div class="flex justify-between items-center gap-20 px-28 text-white border-r border-l border-[#727272]">
+                    <div class="flex justify-between items-center gap-20 px-40 text-white border-r border-l border-[#727272]">
                         <div class="flex flex-col gap-4 font-bold">
                             <p class="cursor-pointer">Bosh sahifa</p>
                             <p class="cursor-pointer">Adiblar</p>

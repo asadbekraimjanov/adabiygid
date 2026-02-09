@@ -1,5 +1,5 @@
 <template>
-    <div class="relative w-full h-full flex justify-between items-center px-28 pt-32 font-[Poppins]">
+    <div class="relative w-full h-full flex justify-between items-center px-40 pt-32 font-[Poppins]">
         <div class="flex flex-col justify-between items-start font-[Poppins] pb-30">
             <img src="@/assets/Adabiy.png" class="w-[70%] z-50" alt="">
             <p class="text-white text-xl font-medium mt-14 z-50">O’zbekiston bo’ylab adabiy gid</p>
@@ -19,7 +19,7 @@
         </div>
     </div>
 
-    <div class="w-full px-28 text-white font-[Poppins] mb-12 mt-28">
+    <div class="w-full px-40 text-white font-[Poppins] mb-12 mt-28">
         <div class="w-full relative flex justify-between items-center bg-[#3A3C3D] opacity-90 p-1">
             <div class="w-full border-r border-gray-500 p-4">
                 <div class="flex items-center justify-center gap-4">
