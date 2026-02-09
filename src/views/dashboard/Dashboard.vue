@@ -108,9 +108,9 @@
                         <p>8 71 2386599</p>
                         <p>info@tuit.com</p>
                     </div>
-                    <div class="flex justify-between items-center gap-20 px-40 text-white border-r border-l border-[#727272]">
+                    <div class="flex justify-between items-center gap-16 px-20 text-white border-r border-l border-[#727272]">
                         <div class="flex flex-col gap-4 font-bold">
-                            <p class="cursor-pointer">Bosh sahifa</p>
+                            <p class="w-30 cursor-pointer">Bosh sahifa</p>
                             <p class="cursor-pointer">Adiblar</p>
                         </div>
                         <div class="flex flex-col gap-4">

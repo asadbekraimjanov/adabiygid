@@ -12,7 +12,7 @@
 
         <div class="absolute w-[90%] flex justify-center items-center pl-10 pt-30">
             <img src="@/assets/Navoiy.png" class="" alt="">
-            <div class="absolute flex justify-between items-center gap-4 -mt-[22%] ml-[30%]">
+            <div class="absolute flex justify-between items-center gap-4 -mt-[450px] ml-[400px]">
                 <div class="w-3 h-3 bg-[#B5964D] rounded-full"></div>
                 <p class="text-[#ffffff76] text-xl italic">Alisher Navoiy</p>
             </div>
