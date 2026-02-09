@@ -1,17 +1,21 @@
 <template>
-    <div class="relative w-full h-full flex justify-between items-center px-28 pt-32">
+    <div class="relative w-full h-full flex justify-between items-center px-28 pt-32 font-[Poppins]">
         <div class="flex flex-col justify-between items-start font-[Poppins] pb-30">
             <img src="@/assets/Adabiy.png" class="w-[70%] z-50" alt="">
             <p class="text-white text-xl font-medium mt-14 z-50">O’zbekiston bo’ylab adabiy gid</p>
             <p class="text-[#B5964D] text-xl font-extrabold z-50">elektron platformasi</p>
             <p class="w-[45%] font-[100] italic text-xl text-[#ffffff76] mt-14 z-50">Adabiyot muzeyi -O‘zbekistonning eng yirik ilmiy va ta’lim muassasalaridan biri</p>
         </div>
-        <div class="flex flex-col justify-between items-start font-[Poppins] pb-30 z-50">
+        <div class="flex flex-col justify-between items-start pb-30 z-50">
             <img src="@/assets/gid.png" class="w-[80%]" alt="">
         </div>
 
         <div class="absolute w-[90%] flex justify-center items-center pl-10 pt-30">
             <img src="@/assets/Navoiy.png" class="" alt="">
+            <div class="absolute flex justify-between items-center gap-4 -mt-[22%] ml-[30%]">
+                <div class="w-3 h-3 bg-[#B5964D] rounded-full"></div>
+                <p class="text-[#ffffff76] text-xl italic">Alisher Navoiy</p>
+            </div>
         </div>
     </div>
 
