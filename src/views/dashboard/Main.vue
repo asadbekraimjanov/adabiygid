@@ -55,7 +55,7 @@
             <div class="w-full flex items-center justify-center p-4">
                 <div class="flex items-center justify-center gap-4">
                     <div class="flex justify-between items-center gap-10">
-                        <img src="@/assets/icons/mail.png" alt="">
+                        <img src="../../assets/icons/mail.png" alt="">
                         <div class="flex flex-col justify-between gap-1">
                             <p class="text-xl font-bold">Bizga xabar yuborish</p>
                             <p class="text-[0.8rem] font-light">Contact@HydraVTech.com</p>
@@ -76,7 +76,7 @@ const props = defineProps({
 })
 
 const getImageUrl = (url) => {
-    return new URL(url, import.meta.url).href
+    return new URL(`../../assets/images/${url}`, import.meta.url).href
 }
 </script>
 

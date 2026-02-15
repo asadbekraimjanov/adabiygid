@@ -164,7 +164,7 @@ const writers = ref([
     {
         id: 1,
         name: 'Alisher Navoiy',
-        imageUrl: '../../assets/Navoiy.png',
+        imageUrl: 'Navoiy.png',
         literatureMuseumTitle: '',
         aboutLiteratureMuseum: '',
         literatureMuseumImageUrl: '',
@@ -173,7 +173,7 @@ const writers = ref([
     {
         id: 2,
         name: 'Obyek',
-        imageUrl: '../../assets/images/Oybek.png',
+        imageUrl: 'Oybek.png',
         literatureMuseumTitle: '',
         aboutLiteratureMuseum: '',
         literatureMuseumImageUrl: '',
@@ -182,7 +182,7 @@ const writers = ref([
     {
         id: 3,
         name: 'Abdulla Qahhor',
-        imageUrl: '../../assets/images/AbdullaQahhor.png',
+        imageUrl: 'AbdullaQahhor.png',
         literatureMuseumTitle: '',
         aboutLiteratureMuseum: '',
         literatureMuseumImageUrl: '',
@@ -191,7 +191,7 @@ const writers = ref([
     {
         id: 4,
         name: 'Sergey Borodin',
-        imageUrl: '../../assets/images/SergeyBorodin2.png',
+        imageUrl: 'SergeyBorodin2.png',
         literatureMuseumTitle: '',
         aboutLiteratureMuseum: '',
         literatureMuseumImageUrl: '',
@@ -200,7 +200,7 @@ const writers = ref([
     {
         id: 5,
         name: 'Abdulla Qodiriy',
-        imageUrl: '../../assets/images/AbdullaQodiriy2.png',
+        imageUrl: 'AbdullaQodiriy2.png',
         literatureMuseumTitle: '',
         aboutLiteratureMuseum: '',
         literatureMuseumImageUrl: '',
@@ -209,7 +209,7 @@ const writers = ref([
     {
         id: 6,
         name: 'Sadriddin Ayniy',
-        imageUrl: '../../assets/images/SadriddinAyniy2.png',
+        imageUrl: 'SadriddinAyniy2.png',
         literatureMuseumTitle: '',
         aboutLiteratureMuseum: '',
         literatureMuseumImageUrl: '',
