@@ -3,11 +3,16 @@
         <div class="w-full fixed flex justify-between items-center bg-[#252525] border-b border-[#898686] py-7 px-40" style="z-index: 1000 !important;">
             <img src="@/assets/AdabiyGid.png" class="z-50" alt="">
             <ul class="flex justify-between items-center gap-12 text-white text-lg font-[Poppins] z-50">
-                <li class="font-semibold cursor-pointer hover:text-[#898686]">Bosh sahifa</li>
-                <li class="cursor-pointer hover:text-[#898686]" @click="window.scrollTo('#main')">Yangiliklar</li>
-                <li class="cursor-pointer hover:text-[#898686]">Adiblar</li>
-                <li class="cursor-pointer hover:text-[#898686]">VR tur</li>
-                <li class="cursor-pointer hover:text-[#898686]">Aloqa</li>
+                <li class="font-semibold cursor-pointer hover:text-[#898686]" @click.prevent="scrollToSection('main')">Bosh sahifa</li>
+                <li class="cursor-pointer hover:text-[#898686]" @click.prevent="scrollToSection('news')">Yangiliklar</li>
+                <li class="cursor-pointer hover:text-[#898686] relative" @click="writerSelect = !writerSelect">
+                    Adiblar
+                    <div v-if="writerSelect" class="absolute w-max text-white bg-[#252525] transition-all -ml-4 mt-2 border border-gray-700 shadow-lg">
+                        <p v-for="item in 3" class="px-3 py-0.5 text-base hover:bg-[#3A3C3D]">{{ item }}-Alisher Navoiy</p>
+                    </div>
+                </li>
+                <li class="cursor-pointer hover:text-[#898686]" @click.prevent="scrollToSection('vrtype')">VR tur</li>
+                <li class="cursor-pointer hover:text-[#898686]" @click.prevent="scrollToSection('contact')">Aloqa</li>
                 <li class="text-[#DFBA63] cursor-pointer">Uz</li>
             </ul>
         </div>
@@ -19,13 +24,15 @@
                 <img src="@/assets/Ellipse%204.png" class="absolute -mt-96  pointer-events-none" alt="">
             </div>
 
-            <Main />
+            <div id="main">
+                <Main />
+            </div>
         </div>
-        <div class="bg-[#3A3C3D] border-t-2 border-gray-800 px-40 pt-6 !font-[Poppins] shadow-2xl">
+        <div id="news" class="bg-[#3A3C3D] border-t-2 border-gray-800 px-40 pt-6 !font-[Poppins] shadow-2xl">
             <News />
         </div>
 
-        <div class="w-full bg-[#232424] px-40 font-[Poppins]">
+        <div id="" class="w-full bg-[#232424] px-40 font-[Poppins]">
             <div class="pt-20 border-r border-[#727272]">
                 <div class="flex justify-between items-center">
                     <div class="w-1/2 border-r border-[#727272] pr-10 pb-10">
@@ -52,7 +59,7 @@
                 <div class="w-full flex justify-center">
                     <div class="w-1/2 pt-0.5 border-t border-[#727272] mt-10"></div>
                 </div>
-                <div class="py-16">
+                <div id="vrtype" class="py-16">
                     <img src="@/assets/Alisher%20Navoiy%20VR%20turi.png" alt="">
                     <img src="@/assets/Line%2020.png" class="mt-4" alt="">
                 </div>
@@ -98,7 +105,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-full pt-16 pb-10 font-[Poppins]">
+        <div id="contact" class="w-full pt-16 pb-10 font-[Poppins]">
             <div class="w-full px-40 border-b border-[#727272] pb-10">
                 <img src="@/assets/Biz%20bilan%20aloqa.png" alt="">
                 <img src="@/assets/Line%2020.png" class="mt-4" alt="">
@@ -110,22 +117,30 @@
                     </div>
                     <div class="flex justify-between items-center gap-16 px-20 text-white border-r border-l border-[#727272]">
                         <div class="flex flex-col gap-4 font-bold">
-                            <p class="w-30 cursor-pointer">Bosh sahifa</p>
+                            <p @click.prevent="scrollToSection('main')" class="w-30 cursor-pointer">Bosh sahifa</p>
                             <p class="cursor-pointer">Adiblar</p>
                         </div>
                         <div class="flex flex-col gap-4">
-                            <p class="cursor-pointer">VR tur</p>
-                            <p class="cursor-pointer">Aloqa</p>
+                            <p @click.prevent="scrollToSection('vrtype')" class="cursor-pointer">VR tur</p>
+                            <p @click.prevent="scrollToSection('contact')" class="cursor-pointer">Aloqa</p>
                         </div>
                     </div>
                     <div class="flex justify-between items-center gap-10 text-white">
                         <div class="flex flex-col gap-4">
-                            <img src="@/assets/icons/facebook.png" class="w-7 cursor-pointer" alt="">
-                            <img src="@/assets/icons/Instagram.png" class="w-7 cursor-pointer" alt="">
+                            <a href="https://www.facebook.com" target="_blank">
+                                <img src="@/assets/icons/facebook.png" class="w-7 cursor-pointer" alt="">
+                            </a>
+                            <a href="https://www.instagram.com" target="_blank">
+                                <img src="@/assets/icons/Instagram.png" class="w-7 cursor-pointer" alt="">
+                            </a>
                         </div>
                         <div class="flex flex-col gap-4">
-                            <img src="@/assets/icons/Twiiter.png" class="w-7 cursor-pointer" alt="">
-                            <img src="@/assets/icons/YouTube.png" class="w-7 cursor-pointer" alt="">
+                            <a href="https://www.twitter.com" target="_blank">
+                                <img src="@/assets/icons/Twiiter.png" class="w-7 cursor-pointer" alt="">
+                            </a>
+                            <a href="https://www.youtube.com" target="_blank">
+                                <img src="@/assets/icons/YouTube.png" class="w-7 cursor-pointer" alt="">
+                            </a>
                         </div>
                     </div>
                     <div>
@@ -141,7 +156,20 @@
 import Main from "@/views/dashboard/Main.vue";
 import News from "@/views/dashboard/News.vue";
 import MapMuseum from "@/views/helpers/MapMuseum.vue";
+import {ref} from "vue";
 
+
+const writerSelect = ref(false)
+
+const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+        window.scrollTo({
+            top: element.offsetTop - 100,
+            behavior: 'smooth'
+        })
+    }
+}
 
 </script>
 
