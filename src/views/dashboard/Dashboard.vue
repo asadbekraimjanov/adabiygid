@@ -8,7 +8,7 @@
                 <li class="cursor-pointer hover:text-[#898686] relative" @click="writerSelect = !writerSelect">
                     Adiblar
                     <div v-if="writerSelect" class="absolute w-max text-white bg-[#252525] transition-all -ml-4 mt-2 border border-gray-700 shadow-lg">
-                        <p v-for="item in 3" class="px-3 py-0.5 text-base hover:bg-[#3A3C3D]">{{ item }}-Alisher Navoiy</p>
+                        <p v-for="(item, idx) in writers" @click="onWriterSelected(idx)" class="px-3 py-0.5 text-base hover:bg-[#3A3C3D]">{{ item.name }}</p>
                     </div>
                 </li>
                 <li class="cursor-pointer hover:text-[#898686]" @click.prevent="scrollToSection('vrtype')">VR tur</li>
@@ -25,7 +25,7 @@
             </div>
 
             <div id="main">
-                <Main />
+                <Main :selected-writer="selectedWriter" />
             </div>
         </div>
         <div id="news" class="bg-[#3A3C3D] border-t-2 border-gray-800 px-40 pt-6 !font-[Poppins] shadow-2xl">
@@ -160,6 +160,67 @@ import {ref} from "vue";
 
 
 const writerSelect = ref(false)
+const writers = ref([
+    {
+        id: 1,
+        name: 'Alisher Navoiy',
+        imageUrl: '../../assets/Navoiy.png',
+        literatureMuseumTitle: '',
+        aboutLiteratureMuseum: '',
+        literatureMuseumImageUrl: '',
+        vrTypeTitle: '',
+    },
+    {
+        id: 2,
+        name: 'Obyek',
+        imageUrl: '../../assets/images/Oybek.png',
+        literatureMuseumTitle: '',
+        aboutLiteratureMuseum: '',
+        literatureMuseumImageUrl: '',
+        vrTypeTitle: '',
+    },
+    {
+        id: 3,
+        name: 'Abdulla Qahhor',
+        imageUrl: '../../assets/images/AbdullaQahhor.png',
+        literatureMuseumTitle: '',
+        aboutLiteratureMuseum: '',
+        literatureMuseumImageUrl: '',
+        vrTypeTitle: '',
+    },
+    {
+        id: 4,
+        name: 'Sergey Borodin',
+        imageUrl: '../../assets/images/SergeyBorodin2.png',
+        literatureMuseumTitle: '',
+        aboutLiteratureMuseum: '',
+        literatureMuseumImageUrl: '',
+        vrTypeTitle: '',
+    },
+    {
+        id: 5,
+        name: 'Abdulla Qodiriy',
+        imageUrl: '../../assets/images/AbdullaQodiriy2.png',
+        literatureMuseumTitle: '',
+        aboutLiteratureMuseum: '',
+        literatureMuseumImageUrl: '',
+        vrTypeTitle: '',
+    },
+    {
+        id: 6,
+        name: 'Sadriddin Ayniy',
+        imageUrl: '../../assets/images/SadriddinAyniy2.png',
+        literatureMuseumTitle: '',
+        aboutLiteratureMuseum: '',
+        literatureMuseumImageUrl: '',
+        vrTypeTitle: '',
+    },
+])
+const selectedWriter = ref(writers.value[0])
+
+const onWriterSelected = (idx) => {
+    selectedWriter.value = writers.value[idx]
+}
 
 const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)

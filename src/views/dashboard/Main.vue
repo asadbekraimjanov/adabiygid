@@ -14,20 +14,21 @@
             </Transition>
         </div>
 
-        <div class="absolute w-[90%] flex justify-center items-center pl-10 pt-30">
+        <div class="absolute w-[90%] flex justify-center items-center pl-10 pt-30 z-50"
+                    :class="selectedWriter.id === 5 || selectedWriter.id === 6 ? '-ml-16' : ''">
             <Transition name="slide-fade-person" appear>
-                <img src="@/assets/Navoiy.png" class="" alt="">
+                <img :src="getImageUrl(selectedWriter.imageUrl)" alt="">
             </Transition>
             <Transition name="slide-fade-person" appear>
                 <div class="absolute flex justify-between items-center gap-4 -mt-[450px] ml-[400px]">
                     <div class="w-3 h-3 bg-[#B5964D] rounded-full"></div>
-                    <p class="text-[#ffffff76] text-xl italic">Alisher Navoiy</p>
+                    <p class="text-[#ffffff76] text-xl italic">{{ selectedWriter.name }}</p>
                 </div>
             </Transition>
         </div>
     </div>
 
-    <div class="w-full px-40 text-white font-[Poppins] mb-12 mt-28">
+    <div class="w-full px-40 text-white font-[Poppins] mb-12 mt-28 relative" style="z-index: 100 !important;">
         <div class="w-full relative flex justify-between items-center bg-[#3A3C3D] opacity-90 p-1">
             <div class="w-full border-r border-gray-500 p-4">
                 <div class="flex items-center justify-center gap-4">
@@ -67,7 +68,16 @@
 </template>
 
 <script setup>
+const props = defineProps({
+    selectedWriter: {
+        type: Object,
+        required: true,
+    }
+})
 
+const getImageUrl = (url) => {
+    return new URL(url, import.meta.url).href
+}
 </script>
 
 <style>
