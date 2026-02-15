@@ -17,7 +17,7 @@
         <div class="absolute w-[90%] flex justify-center items-center pl-10 pt-30 z-50"
                     :class="selectedWriter.id === 5 || selectedWriter.id === 6 ? '-ml-16' : ''">
             <Transition name="slide-fade-person" appear>
-                <img :src="getImageUrl(selectedWriter.imageUrl)" alt="">
+                <img :src="selectedWriter.imageUrl" alt="">
             </Transition>
             <Transition name="slide-fade-person" appear>
                 <div class="absolute flex justify-between items-center gap-4 -mt-[450px] ml-[400px]">
@@ -75,9 +75,6 @@ const props = defineProps({
     }
 })
 
-const getImageUrl = (url) => {
-    return new URL(`../../assets/images/${url}`, import.meta.url).href
-}
 </script>
 
 <style>

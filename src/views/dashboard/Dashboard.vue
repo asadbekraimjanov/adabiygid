@@ -157,6 +157,12 @@ import Main from "@/views/dashboard/Main.vue";
 import News from "@/views/dashboard/News.vue";
 import MapMuseum from "@/views/helpers/MapMuseum.vue";
 import {ref} from "vue";
+import Navoiy from '@/assets/images/Navoiy.png'
+import Oybek from '@/assets/images/Oybek.png'
+import AbdullaQahhor from '@/assets/images/AbdullaQahhor.png'
+import SergeyBorodin from '@/assets/images/SergeyBorodin2.png'
+import AbdullaQodiriy from '@/assets/images/AbdullaQodiriy2.png'
+import SadriddinAyniy from '@/assets/images/SadriddinAyniy2.png'
 
 
 const writerSelect = ref(false)
@@ -164,7 +170,7 @@ const writers = ref([
     {
         id: 1,
         name: 'Alisher Navoiy',
-        imageUrl: 'Navoiy.png',
+        imageUrl: Navoiy,
         literatureMuseumTitle: '',
         aboutLiteratureMuseum: '',
         literatureMuseumImageUrl: '',
@@ -173,7 +179,7 @@ const writers = ref([
     {
         id: 2,
         name: 'Obyek',
-        imageUrl: 'Oybek.png',
+        imageUrl: Oybek,
         literatureMuseumTitle: '',
         aboutLiteratureMuseum: '',
         literatureMuseumImageUrl: '',
@@ -182,7 +188,7 @@ const writers = ref([
     {
         id: 3,
         name: 'Abdulla Qahhor',
-        imageUrl: 'AbdullaQahhor.png',
+        imageUrl: AbdullaQahhor,
         literatureMuseumTitle: '',
         aboutLiteratureMuseum: '',
         literatureMuseumImageUrl: '',
@@ -191,7 +197,7 @@ const writers = ref([
     {
         id: 4,
         name: 'Sergey Borodin',
-        imageUrl: 'SergeyBorodin2.png',
+        imageUrl: SergeyBorodin,
         literatureMuseumTitle: '',
         aboutLiteratureMuseum: '',
         literatureMuseumImageUrl: '',
@@ -200,7 +206,7 @@ const writers = ref([
     {
         id: 5,
         name: 'Abdulla Qodiriy',
-        imageUrl: 'AbdullaQodiriy2.png',
+        imageUrl: AbdullaQodiriy,
         literatureMuseumTitle: '',
         aboutLiteratureMuseum: '',
         literatureMuseumImageUrl: '',
@@ -209,7 +215,7 @@ const writers = ref([
     {
         id: 6,
         name: 'Sadriddin Ayniy',
-        imageUrl: 'SadriddinAyniy2.png',
+        imageUrl: SadriddinAyniy,
         literatureMuseumTitle: '',
         aboutLiteratureMuseum: '',
         literatureMuseumImageUrl: '',
