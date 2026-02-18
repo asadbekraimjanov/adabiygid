@@ -36,31 +36,23 @@
             <div class="pt-20 border-r border-[#727272]">
                 <div class="flex justify-between items-center">
                     <div class="w-1/2 border-r border-[#727272] pr-10 pb-10">
-                        <img src="@/assets/Alisher%20Navoiy%20adabiyot%20muzeyi.png" alt="">
+                        <img :src="selectedWriter.literatureMuseumTitle" alt="">
                         <img src="@/assets/Line%2020.png" class="mt-4" alt="">
 
-                        <p class="py-20 text-white text-xl">
-                            Muzey fondida 17000 dan ortiq eksponatlar - badiiy asarlar, arxeologik obidalar, qo‘lyozmalar, hujjatlar, o‘zbek
-                            adabiyoti madaniyatining ko‘p asrlik tarixini aks ettiruvchi filmlar mavjud. Bundan tashqari, bu yerda
-                            mamlakatimiz yozuvchilarining hayoti va ijodi to‘g‘risidagi 65 mingdan ortiq hujjatlar to‘plangan.
-                            <br><br>
-                            1940-yilda Alisher Navoiy tavalludining 500 yilligi munosabati bilan Respublika koʻrgazmasi 174tariqasida tashkil topgan.
-                            <br><br>
-                            1944 — 68 yillarda Oʻzbekiston Fanlar Akademiyasi Til va adabi-yot instituti boʻlimi, 1968 — 78 yillarda
-                            Oʻzbekiston Fanlar Akademiyasi Adabiyot muzeyi, 1978 — 91 yillarda Oʻzbekiston Fanlar Akademiyasi
-                            H. S. Sulay-monov nomidagi Qoʻlyozmalar institutining muzey boʻlimi.
+                        <p class="py-20 text-white text-xl whitespace-pre-line">
+                            {{ selectedWriter.aboutLiteratureMuseum }}
                         </p>
                     </div>
                     <div class="w-1/2 flex justify-center">
                         <div class="w-1/2 absolute pt-0.5 border-t border-[#727272] translate-y-10"></div>
-                        <img src="@/assets/6495477188811%201.png" class="mt-20" alt="">
+                        <img :src="selectedWriter.literatureMuseumImageUrl" class="mt-20" alt="">
                     </div>
                 </div>
                 <div class="w-full flex justify-center">
                     <div class="w-1/2 pt-0.5 border-t border-[#727272] mt-10"></div>
                 </div>
                 <div id="vrtype" class="py-16">
-                    <img src="@/assets/Alisher%20Navoiy%20VR%20turi.png" alt="">
+                    <img :src="selectedWriter.vrTypeTitle" alt="">
                     <img src="@/assets/Line%2020.png" class="mt-4" alt="">
                 </div>
             </div>
@@ -163,6 +155,24 @@ import AbdullaQahhor from '@/assets/images/AbdullaQahhor.png'
 import SergeyBorodin from '@/assets/images/SergeyBorodin2.png'
 import AbdullaQodiriy from '@/assets/images/AbdullaQodiriy2.png'
 import SadriddinAyniy from '@/assets/images/SadriddinAyniy2.png'
+import NavoiyMuseumImage from '@/assets/images/6495477188811 1.png'
+import OybekMuseumImage from '@/assets/images/OybekMuseumImage.png'
+import AbdullaQahhorMuseumImage from '@/assets/images/AbdullaQahhorMuseumImage.png'
+import BorodinMusemumImage from '@/assets/images/BorodinMuseumImage.png'
+import AbdullaQodiriyMuseumImage from '@/assets/images/AbdullaQodiriyMuseumImage.png'
+import AyniyMuseumImage from '@/assets/images/AyniyMuseumImage.png'
+import AyniyMuseumTitle from '@/assets/images/Sadriddin Ayniy uy muzeyi.png'
+import AbdullaQodiriyMuseumTitle from '@/assets/images/Abdulla Qodiriy uy muzeyi.png'
+import BorodinMuseumTitle from '@/assets/images/Sergey Borodin uy muzeyi.png'
+import AbdullaQahhorMuseumTitle from '@/assets/images/Abdulla Qahhor uy muzeyi.png'
+import OybekMuseumTitle from '@/assets/images/Oybek uy muzeyi.png'
+import NavoiyMuseumTitle from '@/assets/images/Alisher Navoiy adabiyot muzeyi.png'
+import NavoiyVrTitle from '@/assets/images/Alisher Navoiy VR turi.png'
+import OybekVrTitle from '@/assets/images/Oybek VR turi.png'
+import AbdullaQahhorVrTitle from '@/assets/images/Abdulla Qahhor VR turi.png'
+import AbdullaQodiriyVrTitle from '@/assets/images/Abdulla Qodiriy VR turi.png'
+import AyniyVrTitle from '@/assets/images/Sadriddin Ayniy VR turi.png'
+
 
 
 const writerSelect = ref(false)
@@ -171,55 +181,110 @@ const writers = ref([
         id: 1,
         name: 'Alisher Navoiy',
         imageUrl: Navoiy,
-        literatureMuseumTitle: '',
-        aboutLiteratureMuseum: '',
-        literatureMuseumImageUrl: '',
-        vrTypeTitle: '',
+        literatureMuseumTitle: NavoiyMuseumTitle,
+        aboutLiteratureMuseum: 'Muzey fondida 17000 dan ortiq eksponatlar - badiiy asarlar, arxeologik obidalar, qo‘lyozmalar,' +
+            ' hujjatlar, o‘zbek adabiyoti madaniyatining ko‘p asrlik tarixini aks ettiruvchi filmlar mavjud. Bundan tashqari, bu' +
+            ' yerda mamlakatimiz yozuvchilarining hayoti va ijodi to‘g‘risidagi 65 mingdan ortiq hujjatlar to‘plangan.\n' +
+            '\n' +
+            '1940-yilda Alisher Navoiy tavalludining 500 yilligi munosabati bilan Respublika koʻrgazmasi 174tariqasida tashkil topgan.\n' +
+            '\n' +
+            '1944 — 68 yillarda Oʻzbekiston Fanlar Akademiyasi Til va adabi-yot instituti boʻlimi, 1968 — 78 yillarda Oʻzbekiston' +
+            ' Fanlar Akademiyasi Adabiyot muzeyi, 1978 — 91 yillarda Oʻzbekiston Fanlar Akademiyasi H. S. Sulay-monov nomidagi' +
+            ' Qoʻlyozmalar institutining muzey boʻlimi.',
+        literatureMuseumImageUrl: NavoiyMuseumImage,
+        vrTypeTitle: NavoiyVrTitle,
+        location: ''
     },
     {
         id: 2,
         name: 'Obyek',
         imageUrl: Oybek,
-        literatureMuseumTitle: '',
-        aboutLiteratureMuseum: '',
-        literatureMuseumImageUrl: '',
-        vrTypeTitle: '',
+        literatureMuseumTitle: OybekMuseumTitle,
+        aboutLiteratureMuseum: 'Oybek uy-muzeyi adib tug‘ilgan kunning 75 yilligi munosabati bilan 1980 yilda barpo etilgan. Muzey' +
+            ' ikki qismdan iborat bo‘lib, 1940-1941 yillarda qurilgan 5 xonali binodan adibning hayot va ijod yo‘lini aks ettiruvchi' +
+            ' ekspozitsiya o‘rin olgan. Hovlining shimoliy tarafidagi binoda esa memorial xonalar: mehmonxona, ijodxona (birinchi' +
+            ' qavatda), bolalar xonasi va yotoqxona (ikkinchi qavatda) joylashgan. Ikkinchi qavatga dahlizdagi yog‘och zinalar osha,' +
+            ' devorlardagi A.Siglinsev ishlagan gravyuralarni tomosha qilib, chiqiladi. Tashrifchilar katta darvozadan o‘tib, ichkariga' +
+            ' kirganlaridan so‘ng, so‘l tomondagi bir zamonlar terrasa (ayvon) bo‘lib xizmat qilgan xonada Oybek uy-muzeyining' +
+            ' ekspozitsiyasi bilan tanisha boshlaydilar.\n' +
+            '\n' +
+            '2005 yilda Oybek tavalludining 100 yilligi munosabati bilan muzey ekspozitsiyasi yangilangan. Ekspozitsiya adabiy va memorial qismdan iborat.',
+        literatureMuseumImageUrl: OybekMuseumImage,
+        vrTypeTitle: OybekVrTitle,
+        location: ''
     },
     {
         id: 3,
         name: 'Abdulla Qahhor',
         imageUrl: AbdullaQahhor,
-        literatureMuseumTitle: '',
-        aboutLiteratureMuseum: '',
-        literatureMuseumImageUrl: '',
-        vrTypeTitle: '',
+        literatureMuseumTitle: AbdullaQahhorMuseumTitle,
+        aboutLiteratureMuseum: 'O‘zbekiston xalq yozuvchisi, drammaturg, satirik, publitsist va tarjimon Abdulla Qahhorning' +
+            '(1907–1968) memorial muzeyi umrining so‘nggi yillarida yashab o‘tgan uyda joylashgan.\n' +
+            '\n' +
+            'Muzey ekspozitsiyasi memorial va adabiy qismlardan iborat. Memorial qismi yozuvchining mehmonxonasi va ijodxonasidan' +
+            ' tashkil topgan. Adabiy qismda adibning hayotligidagi ish holatiga ega bo‘lgan va yozuvchiga tegishli turli buyumlar' +
+            ' bilan jihozlangan ish stoli saqlab qolingan. Abdulla Qahhor kutubxonasida ko‘plab qo‘lyozmalar, kitoblar, jurnallar,' +
+            ' rus va jahon klassiklarining asarlari, ilmiy nashrlar, ensiklopediyalar va adabiy ma’lumotnomalar saqlanadi.\n' +
+            '\n' +
+            'Abdulla Qahhor rus tilini a’lo darajada bilgan va A.Pushkin, L.Tolstoy, A.Chexov, N.Gogol, M.Gorkiy va boshqa' +
+            ' adiblarning asarlarini o‘zbek tiliga tarjima qilgan.',
+        literatureMuseumImageUrl: AbdullaQahhorMuseumImage,
+        vrTypeTitle: AbdullaQahhorVrTitle,
+        location: ''
     },
     {
         id: 4,
         name: 'Sergey Borodin',
         imageUrl: SergeyBorodin,
-        literatureMuseumTitle: '',
-        aboutLiteratureMuseum: '',
-        literatureMuseumImageUrl: '',
-        vrTypeTitle: '',
+        literatureMuseumTitle: BorodinMuseumTitle,
+        aboutLiteratureMuseum: 'Sergey Borodin uy-muzeyi 1981-yilda tashkil etilgan. Ushbu muzey XX asr oʻrtalarida yashagan va' +
+            ' 1950-1974-yillarda bir qator yirik tarixiy prozaik janrlar muallifi rus yozuvchisi Sergey Borodin xotirasiga bagʻishlangan.\n' +
+            '\n' +
+            'Muzey adabiy ekspozitsiyasining ikkita zali adib hayoti va ijodiy faoliyatining asosiy bosqichlarini oʻz ichiga oladi.' +
+            ' Birinchi xonada Sergey Borodinning bolalik va yoshlik haqidagi xotiralar mavjud. Rasmlar, xatlar, hujjatlardan anglash' +
+            ' mumkinki, bu boʻlajak yozuvchining qiziqishlari erta shakllanganidan dalolat beradi.\n' +
+            '\n' +
+            'Ikkinchi zalda Sergey Borodinning 1930-yillardagi hayotining soʻnggi kunlarigacha boʻlgan faoliyati haqida hikoya' +
+            ' qiluvchi ekspozitsiya nazardan chetda qolmaydi.',
+        literatureMuseumImageUrl: BorodinMusemumImage,
+        vrTypeTitle: AbdullaQahhorVrTitle,
+        location: ''
     },
     {
         id: 5,
         name: 'Abdulla Qodiriy',
         imageUrl: AbdullaQodiriy,
-        literatureMuseumTitle: '',
-        aboutLiteratureMuseum: '',
-        literatureMuseumImageUrl: '',
-        vrTypeTitle: '',
+        literatureMuseumTitle: AbdullaQodiriyMuseumTitle,
+        aboutLiteratureMuseum: 'Abdulla Qodiriy uy-muzeyi — 2019 yil dekabr sanasida Toshkent shahri Shayxontohur tumani,' +
+            ' Samarqand Darvoza koʻchasida yashagan yozuvchi Abdulla Qodiriy uyida ochilgan.\n' +
+            '\n' +
+            'Ayni shu muzeyda yozuvchining oʻzi ijodidan, oʻzbek va jahon adabiyoti durdonalari namunalaridan kutubxona vujudga kelgan.\n' +
+            'Hovli sahni devorlariga oʻzbek va jahon yozuvchi-shoirlarning A.Qodiriy ijodi haqidagi fikrlari qayd etilgan.' +
+            ' Xona devorlariga ilingan adibning asl qiyofasini aks ettiruvchi fotosuratlar Qodiriy ijodini yaqindan tanishtiradi.' +
+            ' Shuningdek, bu yerda gazeta va jurnallar, A.Qodiriy ijodi namoyon ettirilgan ilk kitoblar mavjud.\n' +
+            '\n' +
+            'Muzey ixlosmandlarini xonalardan birida yozuvchi oʻz asarlarini yozganida, oila a’zolari bilan birga bir dasturxonda' +
+            ' yigilishi e\'tiborini chetda qoldirmaydi.',
+        literatureMuseumImageUrl: AbdullaQodiriyMuseumImage,
+        vrTypeTitle: AbdullaQodiriyVrTitle,
+        location: ''
     },
     {
         id: 6,
         name: 'Sadriddin Ayniy',
         imageUrl: SadriddinAyniy,
-        literatureMuseumTitle: '',
-        aboutLiteratureMuseum: '',
-        literatureMuseumImageUrl: '',
-        vrTypeTitle: '',
+        literatureMuseumTitle: AyniyMuseumTitle,
+        aboutLiteratureMuseum: 'Sadriddin Ayniy uy-muzeyi Samarqand shahrida joylashgan. Ushbu uy-muzeyi atoqli o‘zbek va tojik yozuvchisi,' +
+            ' tarjimon va adabiyotshunos olim Sadriddin Ayniy hayoti va ijodiga bag‘ishlangan. Bu uyda Ayniy 1917-yildan oʻtgan asrning' +
+            ' 50-yillari boshlarigacha yashagan. Uy-muzey hozirgacha faoliyat koʻrsatmoqda. Muzey har kuni soat 9:00 dan 20:00 gacha ochiq.\n' +
+            '\n' +
+            'Sadriddin Ayniyning sobiq uyi eski shahar markazida, Registon ko‘chasida, Registon maydoni va ansambli hamda Amir' +
+            ' Temur maqbarasidan uncha uzoq bo‘lmagan joyda joylashgan.\n' +
+            '\n' +
+            'Yo‘l yoqasida, uy oldida "Shoirlar xiyoboni" maydoni va Mirzo Ulug‘bek nomidagi 2-umumta’lim maktabi joylashgan.',
+        literatureMuseumImageUrl: AyniyMuseumImage,
+        vrTypeTitle: AyniyVrTitle,
+        location: ''
     },
 ])
 const selectedWriter = ref(writers.value[0])
