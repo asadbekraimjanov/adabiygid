@@ -93,7 +93,7 @@
                     </div>
                 </div>
                 <div class="w-3/5 h-full">
-                    <MapMuseum />
+                    <MapMuseum :title="selectedWriter.locationName" :location="selectedWriter.location" />
                 </div>
             </div>
         </div>
@@ -193,7 +193,8 @@ const writers = ref([
             ' Qoʻlyozmalar institutining muzey boʻlimi.',
         literatureMuseumImageUrl: NavoiyMuseumImage,
         vrTypeTitle: NavoiyVrTitle,
-        location: ''
+        locationName: 'Alisher Navoiy Muzeyi',
+        location: [41.3208, 69.2549]
     },
     {
         id: 2,
@@ -211,7 +212,8 @@ const writers = ref([
             '2005 yilda Oybek tavalludining 100 yilligi munosabati bilan muzey ekspozitsiyasi yangilangan. Ekspozitsiya adabiy va memorial qismdan iborat.',
         literatureMuseumImageUrl: OybekMuseumImage,
         vrTypeTitle: OybekVrTitle,
-        location: ''
+        locationName: 'Oybek Muzeyi',
+        location: [41.34387, 69.27024]
     },
     {
         id: 3,
@@ -230,7 +232,8 @@ const writers = ref([
             ' adiblarning asarlarini o‘zbek tiliga tarjima qilgan.',
         literatureMuseumImageUrl: AbdullaQahhorMuseumImage,
         vrTypeTitle: AbdullaQahhorVrTitle,
-        location: ''
+        locationName: 'Abdulla Qahhor muzeyi',
+        location: [41.29976, 69.25501]
     },
     {
         id: 4,
@@ -248,7 +251,8 @@ const writers = ref([
             ' qiluvchi ekspozitsiya nazardan chetda qolmaydi.',
         literatureMuseumImageUrl: BorodinMusemumImage,
         vrTypeTitle: AbdullaQahhorVrTitle,
-        location: ''
+        locationName: 'Sergey Borodin muzeyi',
+        location: [41.321100, 69.294514]
     },
     {
         id: 5,
@@ -267,7 +271,8 @@ const writers = ref([
             ' yigilishi e\'tiborini chetda qoldirmaydi.',
         literatureMuseumImageUrl: AbdullaQodiriyMuseumImage,
         vrTypeTitle: AbdullaQodiriyVrTitle,
-        location: ''
+        locationName: 'Abdulla Qodiriy muzeyi',
+        location: [41.313691, 69.219217]
     },
     {
         id: 6,
@@ -284,7 +289,8 @@ const writers = ref([
             'Yo‘l yoqasida, uy oldida "Shoirlar xiyoboni" maydoni va Mirzo Ulug‘bek nomidagi 2-umumta’lim maktabi joylashgan.',
         literatureMuseumImageUrl: AyniyMuseumImage,
         vrTypeTitle: AyniyVrTitle,
-        location: ''
+        locationName: 'Sadriddin Ayniy muzeyi',
+        location: [39.652786, 66.972531]
     },
 ])
 const selectedWriter = ref(writers.value[0])

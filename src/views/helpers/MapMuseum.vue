@@ -3,7 +3,38 @@
 </template>
 
 <script setup>
-import {onMounted} from "vue";
+import {onMounted, ref, watch} from "vue";
+
+const props = defineProps({
+    title: {
+        type: String,
+        required: true
+    },
+    location: {
+        type: Array,
+        required: true
+    }
+})
+const marker = ref(null)
+
+watch(
+    () => props.title,
+    (newTitle) => {
+        if (marker.value) {
+            marker.value.setPopupContent(newTitle);
+        }
+    }
+);
+
+watch(
+    () => props.location,
+    (newLocation) => {
+        if (marker.value) {
+            marker.value.setLatLng(newLocation);
+        }
+    },
+    { deep: true }
+);
 
 onMounted(() => {
     const link = document.createElement("link");
@@ -29,9 +60,9 @@ onMounted(() => {
             }
         ).addTo(map);
 
-        L.marker([41.3208, 69.2549])
+        marker.value = L.marker(props.location)
             .addTo(map)
-            .bindPopup("Alisher Navoiy Muzeyi")
+            .bindPopup(props.title)
             .openPopup();
     };
     document.body.appendChild(script);
