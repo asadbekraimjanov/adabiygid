@@ -50,6 +50,18 @@
 <script setup>
 import {TopRight} from "@element-plus/icons-vue";
 import {router} from "@/router/router.js";
+import {onMounted} from "vue";
+import axios from "axios";
+
+
+
+onMounted(() => {
+    axios.get('https://api.adabiygid.uz/api/news').then(data => {
+        console.log(data.data)
+    }).catch(err => {
+        console.log(err)
+    })
+})
 
 </script>
 
