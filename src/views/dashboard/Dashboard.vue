@@ -316,7 +316,6 @@ onMounted(() => {
     loadingNews.value = true
     axios.get('https://api.adabiygid.uz/api/news').then(data => {
         news.value = data.data.sort((a, b) => new Date(b.newsDetails[0].localDateTime) - new Date(a.newsDetails[0].localDateTime))
-        console.log(news.value)
     }).catch(err => {
         console.log(err)
     }).finally(() => {
