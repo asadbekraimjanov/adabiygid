@@ -29,7 +29,7 @@
             </div>
         </div>
         <div id="news" class="bg-[#3A3C3D] border-t-2 border-gray-800 px-40 pt-6 !font-[Poppins] shadow-2xl">
-            <News />
+            <News :news="news" :loading="loadingNews" />
         </div>
 
         <div id="" class="w-full bg-[#232424] px-40 font-[Poppins]">
@@ -148,7 +148,7 @@
 import Main from "@/views/dashboard/Main.vue";
 import News from "@/views/dashboard/News.vue";
 import MapMuseum from "@/views/helpers/MapMuseum.vue";
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
 import Navoiy from '@/assets/images/Navoiy.png'
 import Oybek from '@/assets/images/Oybek.png'
 import AbdullaQahhor from '@/assets/images/AbdullaQahhor.png'
@@ -172,10 +172,12 @@ import OybekVrTitle from '@/assets/images/Oybek VR turi.png'
 import AbdullaQahhorVrTitle from '@/assets/images/Abdulla Qahhor VR turi.png'
 import AbdullaQodiriyVrTitle from '@/assets/images/Abdulla Qodiriy VR turi.png'
 import AyniyVrTitle from '@/assets/images/Sadriddin Ayniy VR turi.png'
+import axios from "axios";
 
 
 
 const writerSelect = ref(false)
+const loadingNews = ref(false)
 const writers = ref([
     {
         id: 1,
@@ -294,6 +296,7 @@ const writers = ref([
     },
 ])
 const selectedWriter = ref(writers.value[0])
+const news = ref([])
 
 const onWriterSelected = (idx) => {
     selectedWriter.value = writers.value[idx]
@@ -308,6 +311,18 @@ const scrollToSection = (sectionId) => {
         })
     }
 }
+
+onMounted(() => {
+    loadingNews.value = true
+    axios.get('https://api.adabiygid.uz/api/news').then(data => {
+        news.value = data.data.sort((a, b) => new Date(b.newsDetails[0].localDateTime) - new Date(a.newsDetails[0].localDateTime))
+        console.log(news.value)
+    }).catch(err => {
+        console.log(err)
+    }).finally(() => {
+        loadingNews.value = false
+    })
+})
 
 </script>
 
