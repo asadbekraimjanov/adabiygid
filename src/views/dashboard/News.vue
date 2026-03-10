@@ -53,7 +53,9 @@ const months = ref({
 })
 
 const dateTimeFormatter = (el) => {
-    return `${ moment(el).format('DD') < 10 ? moment(el).format('D') : moment(el).format('DD') }-${ moment(el).format('MM') < 10 ? months.value[moment(el).format('M')] : months.value[moment(el).format('MM')] }, ${moment(el).format('YYYY')} | ${moment(el).format('HH:mm')}`
+    return `${ moment(el).format('DD') < 10 ? moment(el).format('D') : moment(el).format('DD') }-${ moment(el).format('MM')
+    < 10 ? months.value[moment(el).format('M')] : months.value[moment(el).format('MM')] }, ${moment(el).format('YYYY')} |
+     ${moment(el).format('HH:mm')}`
 }
 
 </script>
