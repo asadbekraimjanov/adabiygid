@@ -1,7 +1,7 @@
 <template>
     <div class="flex justify-between items-center py-6 border-b border-[#898686]">
         <img id="news" src="@/assets/Yangiliklar.png" class="z-50" alt="">
-        <el-button type="info" @click="router.push('/news')" class="!bg-transparent !rounded-none !cursor-pointer z-50 !text-xl !py-7
+        <el-button type="info" @click="viewMore" class="!bg-transparent !rounded-none !cursor-pointer z-50 !text-xl !py-7
                         hover:scale-[1.05] !font-medium">Barchasini ko’rish</el-button>
     </div>
     <div class="w-full flex justify-between gap-20 py-20" v-loading="loading">
@@ -13,7 +13,7 @@
             <p class="text-xl font-light text-[#C6C2C2] py-2">{{ item.newsDetails[0].description.slice(0, 130) }}...</p>
             <div class="w-full flex justify-between items-center py-4 border-b border-[#898686]">
                 <p class="text-white text-xl">{{ dateTimeFormatter(item.newsDetails[0].localDateTime) }}</p>
-                <el-button type="info" @click="router.push('/news')" :icon="TopRight"
+                <el-button type="info" @click="viewOne(item.id)" :icon="TopRight"
                            class="!bg-[#4F5051] !border-none !rounded-none !text-lg !font-bold !py-5 !px-5 hover:scale-[1.08] z-50" />
             </div>
         </div>
@@ -25,6 +25,9 @@ import {TopRight} from "@element-plus/icons-vue";
 import {router} from "@/router/router.js";
 import moment from "moment";
 import {ref} from "vue";
+import {useRoute} from "vue-router";
+
+const route = useRoute()
 
 const props = defineProps({
     news: {
@@ -56,6 +59,15 @@ const dateTimeFormatter = (el) => {
     return `${ moment(el).format('DD') < 10 ? moment(el).format('D') : moment(el).format('DD') }-${ moment(el).format('MM')
     < 10 ? months.value[moment(el).format('M')] : months.value[moment(el).format('MM')] }, ${moment(el).format('YYYY')} |
      ${moment(el).format('HH:mm')}`
+}
+
+const viewMore = () => {
+    route.params['newsId'] = null
+    router.push('/news')
+}
+const viewOne = (id) => {
+    route.params['newsId'] = id
+    router.push('/news')
 }
 
 </script>

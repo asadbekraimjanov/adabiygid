@@ -90,6 +90,10 @@
 import {router} from "@/router/router.js";
 import {Back} from "@element-plus/icons-vue";
 import {onMounted} from "vue";
+import {useRoute} from "vue-router";
+import axios from "axios";
+
+const route = useRoute()
 
 const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
@@ -101,11 +105,12 @@ const scrollToSection = (sectionId) => {
     }
 }
 
-onMounted(() => {
+onMounted(async () => {
     window.scrollTo({
         top: document.body.offsetTop - 100,
         behavior: 'instant'
     })
+    await axios.get('https://api.adabiygid.uz/api/news/' + route.params.newsId)
 })
 
 </script>
