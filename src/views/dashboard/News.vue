@@ -7,7 +7,7 @@
     <div class="w-full flex justify-between gap-20 py-20" v-loading="loading">
         <div v-for="item in news" class="w-full h-max">
             <div class="overflow-hidden">
-                <img :src="`https://api.adabiygid.uz${item.newsDetails[0].attachment.url}`" class="w-full h-52 transition-all hover:scale-125" alt="">
+                <img :src="`https://api.adabiygid.uz${item.newsDetails[0].attachment.url}`" class="w-full h-[30vh] transition-all hover:scale-125" alt="">
             </div>
             <p class="text-2xl font-semibold text-white py-2">{{ item.title }}</p>
             <p class="text-xl font-light text-[#C6C2C2] py-2">{{ item.newsDetails[0].description.slice(0, 130) }}...</p>
