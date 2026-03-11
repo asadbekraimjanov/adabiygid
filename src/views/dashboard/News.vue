@@ -2,16 +2,16 @@
     <div class="flex justify-between items-center py-6 border-b border-[#898686]">
         <img id="news" src="@/assets/Yangiliklar.png" class="z-50" alt="">
         <el-button type="info" @click="viewMore" class="!bg-transparent !rounded-none !cursor-pointer z-50 !text-xl !py-7
-                        hover:scale-[1.05] !font-medium">Barchasini ko’rish</el-button>
+                        hover:scale-[1.05] !font-medium" :disabled="loading">Barchasini ko’rish</el-button>
     </div>
     <div class="w-full flex justify-between gap-20 py-20" v-loading="loading">
-        <div v-for="item in news" class="w-full h-max">
+        <div v-for="item in news.slice(0, 3)" class="w-full h-max border-b border-[#898686]">
             <div class="overflow-hidden">
                 <img :src="`https://api.adabiygid.uz${item.newsDetails[0].attachment.url}`" class="w-full h-[30vh] transition-all hover:scale-125" alt="">
             </div>
             <p class="text-2xl font-semibold text-white py-2">{{ item.title }}</p>
             <p class="text-xl font-light text-[#C6C2C2] py-2">{{ item.newsDetails[0].description.slice(0, 130) }}...</p>
-            <div class="w-full flex justify-between items-center py-4 border-b border-[#898686]">
+            <div class="w-full flex justify-between items-center py-4">
                 <p class="text-white text-xl">{{ dateTimeFormatter(item.newsDetails[0].localDateTime) }}</p>
                 <el-button type="info" @click="viewOne(item.id)" :icon="TopRight"
                            class="!bg-[#4F5051] !border-none !rounded-none !text-lg !font-bold !py-5 !px-5 hover:scale-[1.08] z-50" />
@@ -25,9 +25,7 @@ import {TopRight} from "@element-plus/icons-vue";
 import {router} from "@/router/router.js";
 import moment from "moment";
 import {ref} from "vue";
-import {useRoute} from "vue-router";
 
-const route = useRoute()
 
 const props = defineProps({
     news: {
@@ -61,17 +59,17 @@ const dateTimeFormatter = (el) => {
      ${moment(el).format('HH:mm')}`
 }
 
-const viewMore = () => {
-    route.params['newsId'] = null
-    router.push('/news')
+const viewMore = async () => {
+    await router.push({path: '/news', query: {newsId: null}})
 }
-const viewOne = (id) => {
-    route.params['newsId'] = id
-    router.push('/news')
+const viewOne = async (data) => {
+    await router.push({path: '/news', query: {newsId: data}})
 }
 
 </script>
 
-<style scoped>
-
+<style>
+.el-loading-mask {
+    background-color: rgba(57, 57, 57, 0.5) !important;
+}
 </style>
