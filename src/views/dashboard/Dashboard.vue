@@ -142,7 +142,7 @@
             </div>
         </div>
 
-        <el-drawer v-model="drawerVisible" :title="selectedWriter?.name + ' ning VR turi'" direction="ttb" size="100%" close-on-press-escape>
+        <el-drawer v-model="drawerVisible" :title="selectedWriter?.name + ' muzeyiga sayohat'" direction="ttb" size="100%" close-on-press-escape>
             <div id="vrtype" class="w-full h-full">
                 <UnityPlayer />
             </div>
