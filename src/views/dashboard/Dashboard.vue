@@ -57,7 +57,7 @@
                 </div>
             </div>
             <div class="pb-20">
-                <img src="@/assets/A.png" class="w-full cursor-pointer" alt="">
+                <img @click="drawerVisible = true" src="@/assets/A.png" class="w-full cursor-pointer" alt="">
             </div>
         </div>
 
@@ -141,6 +141,12 @@
                 </div>
             </div>
         </div>
+
+        <el-drawer v-model="drawerVisible" :title="selectedWriter?.name + ' ning VR turi'" direction="ttb" size="100%" close-on-press-escape>
+            <div id="vrtype" class="w-full h-full">
+                <UnityPlayer />
+            </div>
+        </el-drawer>
     </div>
 </template>
 
@@ -173,11 +179,12 @@ import AbdullaQahhorVrTitle from '@/assets/images/Abdulla Qahhor VR turi.png'
 import AbdullaQodiriyVrTitle from '@/assets/images/Abdulla Qodiriy VR turi.png'
 import AyniyVrTitle from '@/assets/images/Sadriddin Ayniy VR turi.png'
 import axios from "axios";
-
+import UnityPlayer from "@/views/helpers/UnityPlayer.vue";
 
 
 const writerSelect = ref(false)
 const loadingNews = ref(false)
+const drawerVisible = ref(false)
 const writers = ref([
     {
         id: 1,
@@ -312,19 +319,37 @@ const scrollToSection = (sectionId) => {
     }
 }
 
-onMounted(() => {
-    loadingNews.value = true
-    axios.get('https://api.adabiygid.uz/api/news').then(data => {
-        news.value = data.data.sort((a, b) => new Date(b.newsDetails[0].localDateTime) - new Date(a.newsDetails[0].localDateTime))
-    }).catch(err => {
-        console.log(err)
-    }).finally(() => {
-        loadingNews.value = false
-    })
+onMounted(async () => {
+    loadingNews.value = true;
+
+    try {
+        const { data } = await axios.get("https://api.adabiygid.uz/api/news");
+
+        news.value = data.sort(
+            (a, b) =>
+                new Date(b.newsDetails[0].localDateTime) -
+                new Date(a.newsDetails[0].localDateTime)
+        );
+    } catch (err) {
+        console.log(err);
+    } finally {
+        loadingNews.value = false;
+    }
 })
 
 </script>
 
-<style scoped>
+<style>
+.el-drawer .el-drawer__header {
+    background-color: #231F20 !important;
+    padding: 14px !important;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+}
 
+.el-drawer .el-drawer__body {
+    padding: 0;
+}
 </style>
