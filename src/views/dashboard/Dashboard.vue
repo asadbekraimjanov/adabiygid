@@ -57,7 +57,7 @@
                 </div>
             </div>
             <div class="pb-20 relative">
-                <div class="absolute w-full h-full flex justify-center items-center" style="z-index: 1000;">
+                <div class="absolute w-full h-full flex justify-center items-center" style="z-index: 100;">
                     <img @click="drawerVisible = true" src="@/assets/images/vr%20play.png" class="animate-play absolute cursor-pointer z-10" alt="">
                 </div>
                 <img src="@/assets/images/VR.png" class="w-full" alt="">
