@@ -56,8 +56,11 @@
                     <img src="@/assets/Line%2020.png" class="mt-4" alt="">
                 </div>
             </div>
-            <div class="pb-20">
-                <img @click="drawerVisible = true" src="@/assets/A.png" class="w-full cursor-pointer" alt="">
+            <div class="pb-20 relative">
+                <div class="absolute w-full h-full flex justify-center items-center" style="z-index: 100;">
+                    <img @click="drawerVisible = true" src="@/assets/images/vr%20play.png" class="animate-play absolute cursor-pointer z-10" alt="">
+                </div>
+                <img src="@/assets/images/VR.png" class="w-full" alt="">
             </div>
         </div>
 
@@ -352,6 +355,22 @@ onMounted(async () => {
 </script>
 
 <style>
+@keyframes playPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animate-play {
+    animation: playPulse 3s ease-out infinite;
+}
+
 .el-drawer .el-drawer__header {
     background-color: #231F20 !important;
     padding: 14px !important;
