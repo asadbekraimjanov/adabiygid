@@ -190,6 +190,8 @@ const writers = ref([
         id: 1,
         name: 'Alisher Navoiy',
         imageUrl: Navoiy,
+        address: '69 Navoiy shoh ko\'chasi, Тоshkent 100011',
+        phoneNumber: '+998 71 241 02 75',
         literatureMuseumTitle: NavoiyMuseumTitle,
         aboutLiteratureMuseum: 'Muzey fondida 17000 dan ortiq eksponatlar - badiiy asarlar, arxeologik obidalar, qo‘lyozmalar,' +
             ' hujjatlar, o‘zbek adabiyoti madaniyatining ko‘p asrlik tarixini aks ettiruvchi filmlar mavjud. Bundan tashqari, bu' +
@@ -209,6 +211,8 @@ const writers = ref([
         id: 2,
         name: 'Obyek',
         imageUrl: Oybek,
+        address: 'Yunusobod tumani, 1-Iftixor tor ko‘chasi, 26',
+        phoneNumber: '+998 71 248 09 00',
         literatureMuseumTitle: OybekMuseumTitle,
         aboutLiteratureMuseum: 'Oybek uy-muzeyi adib tug‘ilgan kunning 75 yilligi munosabati bilan 1980 yilda barpo etilgan. Muzey' +
             ' ikki qismdan iborat bo‘lib, 1940-1941 yillarda qurilgan 5 xonali binodan adibning hayot va ijod yo‘lini aks ettiruvchi' +
@@ -228,6 +232,8 @@ const writers = ref([
         id: 3,
         name: 'Abdulla Qahhor',
         imageUrl: AbdullaQahhor,
+        address: 'Yakkasaroy tumani, Yoshlar ko‘chasi, 26/1',
+        phoneNumber: '+998 71 256 08 04',
         literatureMuseumTitle: AbdullaQahhorMuseumTitle,
         aboutLiteratureMuseum: 'O‘zbekiston xalq yozuvchisi, drammaturg, satirik, publitsist va tarjimon Abdulla Qahhorning' +
             '(1907–1968) memorial muzeyi umrining so‘nggi yillarida yashab o‘tgan uyda joylashgan.\n' +
@@ -248,6 +254,8 @@ const writers = ref([
         id: 4,
         name: 'Sergey Borodin',
         imageUrl: SergeyBorodin,
+        address: 'Toshkent shahri, Mirobod tumani',
+        phoneNumber: '+998 71 237 09 82',
         literatureMuseumTitle: BorodinMuseumTitle,
         aboutLiteratureMuseum: 'Sergey Borodin uy-muzeyi 1981-yilda tashkil etilgan. Ushbu muzey XX asr oʻrtalarida yashagan va' +
             ' 1950-1974-yillarda bir qator yirik tarixiy prozaik janrlar muallifi rus yozuvchisi Sergey Borodin xotirasiga bagʻishlangan.\n' +
@@ -267,6 +275,8 @@ const writers = ref([
         id: 5,
         name: 'Abdulla Qodiriy',
         imageUrl: AbdullaQodiriy,
+        address: 'Toshkent shahri, Termiz ko\'chasi 35',
+        phoneNumber: '+998 71 000 00 00',
         literatureMuseumTitle: AbdullaQodiriyMuseumTitle,
         aboutLiteratureMuseum: 'Abdulla Qodiriy uy-muzeyi — 2019 yil dekabr sanasida Toshkent shahri Shayxontohur tumani,' +
             ' Samarqand Darvoza koʻchasida yashagan yozuvchi Abdulla Qodiriy uyida ochilgan.\n' +
@@ -287,6 +297,8 @@ const writers = ref([
         id: 6,
         name: 'Sadriddin Ayniy',
         imageUrl: SadriddinAyniy,
+        address: 'Registon ko\'chasi 38a, Samarqand viloyati',
+        phoneNumber: '+998 93 342 99 26',
         literatureMuseumTitle: AyniyMuseumTitle,
         aboutLiteratureMuseum: 'Sadriddin Ayniy uy-muzeyi Samarqand shahrida joylashgan. Ushbu uy-muzeyi atoqli o‘zbek va tojik yozuvchisi,' +
             ' tarjimon va adabiyotshunos olim Sadriddin Ayniy hayoti va ijodiga bag‘ishlangan. Bu uyda Ayniy 1917-yildan oʻtgan asrning' +

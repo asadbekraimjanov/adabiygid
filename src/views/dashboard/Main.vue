@@ -36,7 +36,7 @@
                         <img src="@/assets/icons/Combined-Shape.png" alt="">
                         <div class="flex flex-col justify-between gap-1">
                             <p class="text-xl font-bold">Bizning manzil</p>
-                            <p class="text-[0.8rem] font-light">69 Navoiy shoh ko'chasi, Тоshkent 100011</p>
+                            <p class="text-[0.8rem] font-light">{{ selectedWriter.address }}</p>
                         </div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                         <img src="@/assets/icons/phone-call.png" alt="">
                         <div class="flex flex-col justify-between gap-1">
                             <p class="text-xl font-bold">Biz bilan aloqa</p>
-                            <p class="text-[0.8rem] font-light">8 71 241 02 75</p>
+                            <p class="text-[0.8rem] font-light">{{ selectedWriter.phoneNumber }}</p>
                         </div>
                     </div>
                 </div>
