@@ -4,7 +4,7 @@
         <el-button type="info" @click="viewMore" class="!bg-transparent !rounded-none !cursor-pointer z-50 !text-xl !py-7
                         hover:scale-[1.05] !font-medium" :disabled="loading">Barchasini ko’rish</el-button>
     </div>
-    <div class="w-full flex justify-between gap-20 py-20" v-loading="loading">
+    <div class="w-full flex justify-between gap-20 py-20">
         <div v-for="item in news.slice(0, 3)" class="w-full h-max border-b border-[#898686]">
             <div class="overflow-hidden">
                 <img :src="`https://api.adabiygid.uz${item.newsDetails[0].attachment.url}`" class="w-full h-[30vh] transition-all hover:scale-125" alt="">

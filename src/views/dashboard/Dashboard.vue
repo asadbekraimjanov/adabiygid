@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full bg-[#252525]">
+    <div v-loading="loadingNews" class="w-full bg-[#252525]">
         <div class="w-full fixed flex justify-between items-center bg-[#252525] border-b border-[#898686] py-7 px-40" style="z-index: 1000 !important;">
             <img src="@/assets/AdabiyGid.png" class="z-50" alt="">
             <ul class="flex justify-between items-center gap-12 text-white text-lg font-[Poppins] z-50">
@@ -28,11 +28,11 @@
                 <Main :selected-writer="selectedWriter" />
             </div>
         </div>
-        <div id="news" class="bg-[#3A3C3D] border-t-2 border-gray-800 px-40 pt-6 !font-[Poppins] shadow-2xl">
+        <div v-if="news.length" id="news" class="bg-[#3A3C3D] border-t-2 border-gray-800 px-40 pt-6 !font-[Poppins] shadow-2xl">
             <News :news="news" :loading="loadingNews" />
         </div>
 
-        <div id="" class="w-full bg-[#232424] px-40 font-[Poppins]">
+        <div class="w-full bg-[#232424] border-t-2 border-[#3A3C3D] px-40 font-[Poppins]">
             <div class="pt-20 border-r border-[#727272]">
                 <div class="flex justify-between items-center">
                     <div class="w-1/2 border-r border-[#727272] pr-10 pb-10">
@@ -183,6 +183,7 @@ import AbdullaQodiriyVrTitle from '@/assets/images/Abdulla Qodiriy VR turi.png'
 import AyniyVrTitle from '@/assets/images/Sadriddin Ayniy VR turi.png'
 import axios from "axios";
 import UnityPlayer from "@/views/helpers/UnityPlayer.vue";
+import {ElMessage} from "element-plus";
 
 
 const writerSelect = ref(false)
@@ -335,6 +336,7 @@ onMounted(async () => {
         );
     } catch (err) {
         console.log(err);
+        ElMessage.warning('Yangiliklarni yuklashda xatolik!')
     } finally {
         loadingNews.value = false;
     }
@@ -370,5 +372,9 @@ onMounted(async () => {
 
 .el-drawer .el-drawer__body {
     padding: 0;
+}
+
+.el-loading-mask {
+    background-color: rgba(57, 57, 57, 0.5) !important;
 }
 </style>
