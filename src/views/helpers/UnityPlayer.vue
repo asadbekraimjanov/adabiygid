@@ -1,11 +1,15 @@
 <template>
-    <div id="unity-container">
+    <div v-loading="loading" id="unity-container">
         <canvas id="unity-canvas"></canvas>
     </div>
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import {onMounted, ref} from "vue";
+import {ElMessage} from "element-plus";
+
+
+const loading = ref(false)
 
 onMounted(() => {
     const canvas = document.getElementById("unity-canvas");
@@ -18,6 +22,7 @@ onMounted(() => {
     const loader = document.createElement("script");
     loader.src = "/unity/Build/Veb new.loader.js";
 
+    loading.value = true
     loader.onload = () => {
         createUnityInstance(canvas, {
             dataUrl: "/unity/Build/Veb new.data.unityweb",
@@ -60,8 +65,11 @@ onMounted(() => {
 
             })
             .catch((err) => {
+                ElMessage.warning('Xatolik yuz berdi!')
                 console.error("Unity yuklashda xato:", err);
-            });
+            }).finally(() => {
+                loading.value = false
+        })
     };
 
     document.body.appendChild(loader);
