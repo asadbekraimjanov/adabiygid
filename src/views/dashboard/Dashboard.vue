@@ -319,7 +319,67 @@ const writers = ref([
     },
 ])
 const selectedWriter = ref(writers.value[0])
-const news = ref([])
+const news = ref([
+    {
+        id: 1,
+        title: 'Хотира кунидаги ўйларим...',
+        newsDetails: [
+            {
+                id: 1,
+                attachment: {
+                    id: 1,
+                    attachType: 'PICTURE',
+                    fileName: 'rasm.png',
+                    url: '/Rectangle%201.png',
+                    isDeleted: false
+                },
+                description: 'РАЪНО ИБРОҲИМОВА, филология' +
+                    'фанлари доктори:' +
+                    ' Ойбек уй музейида йилнинг ҳар 10 январь ва 1 июль санасида...',
+                localDateTime: '2024-01-10T11:35:52.000Z',
+                orderDetail: 1
+            }
+        ]
+    },
+    {
+        id: 2,
+        title: 'Ойбек ҳаёти, ижоди ва музей экспозицияси билан танишиш',
+        newsDetails: [
+            {
+                id: 1,
+                attachment: {
+                    id: 1,
+                    attachType: 'PICTURE',
+                    fileName: 'rasm.png',
+                    url: '/Rectangle%203.png',
+                    isDeleted: false
+                },
+                description: 'Жорий йилнинг 9 январь куни таниқли россиялик тарихчи-санъатшунос, Давлат Третьяков галереяси  Бош директори ... ',
+                localDateTime: '2024-01-09T14:00:52.000Z',
+                orderDetail: 2
+            }
+        ]
+    },
+    {
+        id: 3,
+        title: 'Mузейга ташриф',
+        newsDetails: [
+            {
+                id: 1,
+                attachment: {
+                    id: 1,
+                    attachType: 'PICTURE',
+                    fileName: 'rasm.png',
+                    url: '/Rectangle%203.png',
+                    isDeleted: false
+                },
+                description: 'Тошкент текстиль ва енгил саноат институти (ТТЕСИ) ўқитувчилари адибнинг ҳаёти ва ижодини ўрганиш ',
+                localDateTime: '2024-01-08T09:10:52.000Z',
+                orderDetail: 3
+            }
+        ]
+    },
+])
 
 const onWriterSelected = (idx) => {
     selectedWriter.value = writers.value[idx]
@@ -336,22 +396,22 @@ const scrollToSection = (sectionId) => {
 }
 
 onMounted(async () => {
-    loadingNews.value = true;
-
-    try {
-        const { data } = await axios.get("https://api.adabiygid.uz/api/news");
-
-        news.value = data.sort(
-            (a, b) =>
-                new Date(b.newsDetails[0].localDateTime) -
-                new Date(a.newsDetails[0].localDateTime)
-        );
-    } catch (err) {
-        console.log(err);
-        ElMessage.warning('Yangiliklarni yuklashda xatolik!')
-    } finally {
-        loadingNews.value = false;
-    }
+    // loadingNews.value = true;
+    //
+    // try {
+    //     const { data } = await axios.get("https://api.adabiygid.uz/api/news");
+    //
+    //     news.value = data.sort(
+    //         (a, b) =>
+    //             new Date(b.newsDetails[0].localDateTime) -
+    //             new Date(a.newsDetails[0].localDateTime)
+    //     );
+    // } catch (err) {
+    //     console.log(err);
+    //     ElMessage.warning('Yangiliklarni yuklashda xatolik!')
+    // } finally {
+    //     loadingNews.value = false;
+    // }
 })
 
 </script>

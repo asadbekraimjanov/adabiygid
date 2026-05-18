@@ -93,7 +93,7 @@ import {Back} from "@element-plus/icons-vue";
 import {onMounted, ref} from "vue";
 import {useRoute} from "vue-router";
 import axios from "axios";
-import moment from "moment/moment.js";
+import moment from "moment";
 
 const newsAll = ref([])
 const total = ref(1)
